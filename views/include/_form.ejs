@@ -1,0 +1,53 @@
+
+
+<form action="/api/offers" method="POST" id="add_offer" enctype="application/x-www-form-urlencoded">
+
+    <div class="mb-3">
+      <label for="advertiser_name" class="form-label">Advertiser Name</label>
+      <input type="hidden" class="form-control" id="id" value="<%= offer._id %>" name="id"  >
+      <input type="text" class="form-control" id="advertiser_name" value="<%= offer.advertiser_name %>" name="advertiser_name"  >
+    </div>
+    <div class="mb-3">
+      <label for="url" class="form-label">URL</label>
+      <input type="text" class="form-control" id="url" value="<%= offer.url %>" name="url" >
+    </div>
+    <div class="mb-3">
+      <label for="description">Description</label>
+      <textarea class="form-control" placeholder="Description" id="description"  name="description" 
+        style="height: 100px"><%= offer.description %></textarea>
+    </div>
+
+    <div class="mb-3">        
+        <label for="starts_at">Starts At</label>
+          <div class="input-append date">
+            <input type="text" class="datetime" id="starts_at" value="<%= offer.starts_at %>" name="starts_at" ><span class="add-on"><i class="icon-th"></i></span>
+          </div>
+    </div>
+
+
+    <div class="mb-3">        
+        <label for="ends_at">Ends At</label>
+          <div class="input-append date">
+            <input type="text" class="datetime" id="ends_at" value="<%= offer.ends_at %>" name="ends_at" ><span class="add-on"><i class="icon-th"></i></span>
+          </div>
+    </div>
+       
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="premium" <%= offer.premium ? 'checked' : '' %> name="premium" >
+      <label class="form-check-label" for="premium">Premium</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  
+<script>   
+
+    $('.input-append.date').datepicker({
+        format: "dd/mm/yyyy",
+        language: "pt-BR",
+        autoclose: true,
+        toggleActive: true
+    });
+    
+</script>

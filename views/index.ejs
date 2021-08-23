@@ -1,0 +1,44 @@
+<!-- include header -->
+<%- include("include/_header") %>
+    <!-- /include header -->
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="box-nave d-flex-justify-between">
+                <a href="/add-offer" class="btn btn-outline-primary btn-sm">
+                    <span class="text-gradient">New Offer</span>
+                </a>
+            </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>URL</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include("include/_show") %>
+                    </tbody>
+
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- /form handling -->
+
+
+    <!-- include header -->
+    <%- include("include/_footer") %>
+        <!-- /include header -->

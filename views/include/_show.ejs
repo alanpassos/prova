@@ -1,0 +1,28 @@
+
+<% for(var i = 0; i < offers.length; i++){ %>
+<tr>
+    <td><%= i+1 %></td>
+    <td><%= offers[i].advertiser_name %></td>
+    <td><a target="_blank" href=<%= offers[i].url %>> <%= offers[i].url %></a> </td>
+    <td><%= offers[i].disabled === true ? 'Disabled'  : 'Enabled' %></td>
+    <td>
+        <a href="/update-offer/?id=<%= offers[i]._id %>" class="btn-sm">
+            <span class="text-gradient">
+                Edit
+            </span>
+        </a>
+        <a class="btn-sm status" href="" id=<%= offers[i]._id %>  data-id=<%= offers[i]._id %> data-status=<%= offers[i].disabled %> >
+            <span class="text-gradient">
+                <%= offers[i].disabled === true ? 'Enabled' : 'Disabled'   %>
+            </span>
+        </a>
+        <a  class="btn-sm delete" href="" id=<%= offers[i]._id %>  data-id=<%= offers[i]._id %>>
+            <span class="text-gradient">
+                Destroy
+            </span>
+        </a>
+
+    </td>
+</tr>
+
+<% }%>
